@@ -22,3 +22,7 @@ jobs:
           file: ./docker/Dockerfile.backend
           push: true
           tags: geethapranay/todo-app-backend:${{ github.sha }}
+
+      # Deploy to vm
+    
+    
