@@ -25,7 +25,7 @@ jobs:
 
       # Deploy to vm
       - name: Deploy to the VM
-        run: 
+        run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
           chmod 700 /home/runner/ssh_key
-          ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubunut@3.106.166.196 -t "docker stop user_backend && docker run --name user_backend -d -p 3001:3001 geethapranay/todo-app-backend:${{ githus.sha }}"
+          ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubunut@3.106.166.196 -t "docker stop user_backend && docker run --name user_backend -d -p 3001:3001 geethapranay/todo-app-backend:${{ github.sha }}"
